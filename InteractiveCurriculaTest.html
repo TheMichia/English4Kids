@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Curriculum Test</title>
+    <link rel="stylesheet" href="InteractiveCurriculaTest.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&amp;family=Roboto+Flex:opsz,wght@8..144,100..1000&amp;family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="MainContainer">
+      <h2 class="SyllabusTitle">Kids (Intensivo) 8-12</h2>
+      <div class="levels-container expanded">
+        <div class="levels-grid" id="levelsGrid">
+          <!-- <button class="level-btn" data-level="0" onclick="opentopics()">
+              Level 0
+            </button>
+            <button class="level-btn" data-level="1" onclick="opentopics()">
+              Level 1
+            </button>
+            <button class="level-btn" data-level="2" onclick="opentopics()">
+              Level 2
+            </button>
+            <button class="level-btn" data-level="3" onclick="opentopics()">
+              Level 3
+            </button>
+            <button class="level-btn" data-level="4" onclick="opentopics()">
+              Level 4
+            </button>
+            <button class="level-btn" data-level="5" onclick="opentopics()">
+              Level 5
+            </button>
+            <button class="level-btn" data-level="6" onclick="opentopics()">
+              Level 6
+            </button>
+            <button class="level-btn" data-level="7" onclick="opentopics()">
+              Level 7
+            </button>
+            <button class="level-btn" data-level="8" onclick="opentopics()">
+              Level 8
+            </button>
+            <button class="level-btn" data-level="9" onclick="opentopics()">
+              Level 9
+            </button>
+            <button class="level-btn" data-level="10" onclick="opentopics()">
+              Level 10
+            </button>
+            <button class="level-btn" data-level="11" onclick="opentopics()">
+              Level 11
+            </button>
+            <button class="level-btn" data-level="12" onclick="opentopics()">
+              Level 12
+            </button> -->
+        </div>
+
+        <div class="Topics hidden" id="Topics">
+          <!-- <h2 class="LevelTitle">Level #</h2>
+            <div class="topicsSpace">
+              <table>
+                <tbody>
+                  <tr>
+                    <td
+                      style="
+                        font-family: Verdana;
+                        border-bottom: 1px dotted #dcf8fa;
+                        text-align: left;
+                        padding: 1rem 0 0.2rem 10%;
+                        font-size: 0.95rem;
+                        font-weight: 600;
+                        color: #126064;
+                      "
+                      align="left"
+                    >
+                      &#9989; Información Personal
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-family: Verdana;
+                        font-weight: 500;
+                        text-align: left;
+                        padding: 0.3rem 0 1rem 20%;
+                        border-bottom: 1px dotted #dcf8fa;
+                        color: #044043;
+                        font-size: 0.85rem;
+                      "
+                      align="left"
+                    >
+                      Hablar de sí mismo mencionando nombre, edad, gustos y
+                      familia de manera natural.<br />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-family: Verdana;
+                        border-bottom: 1px dotted #dcf8fa;
+                        text-align: left;
+                        padding: 1rem 0 0.2rem 10%;
+                        font-size: 0.95rem;
+                        font-weight: 600;
+                        color: #126064;
+                      "
+                      align="left"
+                    >
+                      &#9989; Vocabulario General/ Preguntas Básicas
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-family: Verdana;
+                        font-weight: 500;
+                        text-align: left;
+                        padding: 0.3rem 0 1rem 20%;
+                        border-bottom: 1px dotted #dcf8fa;
+                        color: #044043;
+                        font-size: 0.85rem;
+                      "
+                      align="left"
+                    >
+                      Ampliar palabras y expresiones para describir cosas y
+                      hacer preguntas simples.<br />(What is your name? → ¿Cuál
+                      es tu nombre?).
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-family: Verdana;
+                        border-bottom: 1px dotted #dcf8fa;
+                        text-align: left;
+                        padding: 1rem 0 0.2rem 10%;
+                        font-size: 0.95rem;
+                        font-weight: 600;
+                        color: #126064;
+                      "
+                      align="left"
+                    >
+                      &#9989; Verbo ser/estar (1ra persona)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      style="
+                        font-family: Verdana;
+                        font-weight: 500;
+                        text-align: left;
+                        padding: 0.3rem 0 1rem 20%;
+                        border-bottom: 1px dotted #dcf8fa;
+                        color: #044043;
+                        font-size: 0.85rem;
+                      "
+                      align="left"
+                    >
+                      Hablar de uno mismo usando “am” para describirse o indicar
+                      estados.<br />(I am happy → Estoy feliz).
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button class="closeTopics" onclick="closeTopics()">X</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <footer>
+      Made with ♥ by Michelle Hernández | 
+      © 2025 English4Kids. All rights reserved. | 
+      <span id="version"></span>
+    </footer>
+
+    <script src="InteractiveCurriculaTest.js"></script>
+    <script src="https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/kalimba-mp3.js"></script>
+    <script>
+      const NOTES = [
+        "G4",
+        "Ab4",
+        "Bb4",
+        "C5",
+        "Db5",
+        "Eb5",
+        "F5",
+        "G5",
+        "Ab5",
+        "Bb5",
+        "C6",
+        "Db6",
+        "Eb6",
+      ];
+
+      function assignSoundsToLevels() {
+        const buttons = document.querySelectorAll(".level-btn");
+        const soundData = MIDI.Soundfont.kalimba;
+
+        const totalButtons = buttons.length;
+        const totalNotes = NOTES.length;
+
+        buttons.forEach((btn, index) => {
+          // Asignación de sonido: el último botón siempre recibe la última nota (Eb6)
+          const noteIndex = totalNotes - totalButtons + index;
+          const note = NOTES[noteIndex] || NOTES[NOTES.length - 1]; // si hay menos botones que notas, usar últimas notas
+
+          if (!soundData[note]) {
+            console.warn("Nota no encontrada:", note);
+            return;
+          }
+
+          const audio = new Audio(soundData[note]);
+          audio.volume = 0.2; // Bajamos el volumen al 30%
+
+          btn.addEventListener("click", () => {
+            audio.currentTime = 0;
+            audio.play();
+          });
+
+          btn.addEventListener("mouseenter", () => {
+            audio.currentTime = 0;
+            audio.play();
+          });
+        });
+      }
+
+      window.addEventListener("load", assignSoundsToLevels);
+    </script>
+  </body>
+</html>

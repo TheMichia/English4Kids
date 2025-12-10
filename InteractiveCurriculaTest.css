@@ -1,0 +1,386 @@
+body {
+  background-image: url("https://i.imgur.com/QnKuamC.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left ;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+
+.MainContainer {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  margin: 0;
+  height: 90%;
+  width: 95%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  border-radius: 25px;
+}
+
+.SyllabusTitle {
+  text-align: center;
+  margin: 0 auto;
+  font-family: Oswald;
+  font-size: 3rem;
+  color: #126064;
+  text-shadow: 0 0 10px rgba(163, 225, 230, 0.15);
+  font-weight: 800;
+  padding: 1rem;
+  border-bottom: 1px dotted #219fa6
+}
+
+.levels-container {
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  margin: 0;
+  border-radius: 15px;
+  height: 90%;
+  /* width: 95%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all ease 0.5s;
+}
+
+.expanded {
+  width: 100%;
+  height: 100%;
+  transition: all ease 0.5s;
+}
+
+.compressed {
+  transition: all ease 0.5s;
+  width: 68%;
+  height: 100%;
+}
+
+
+
+
+/* --- GRID --- */
+.levels-grid {
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* overflow: hidden; */
+  gap: 0;
+  transition: all ease 0.5s;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- BOTONES --- */
+.level-btn {
+  color: transparent;
+  padding: 12px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  transition: all ease 0.5s;
+  background-color: var(--background-color);
+  background-size: var(--background-size);
+  background-position: var(--background-position);
+  background-repeat: var(--background-repeat);
+}
+
+/* lo que todos los btns siempre llevan al haber hover */
+.levels-grid .level-btn:hover {
+  transition: all ease 0.3s;
+  transform: scale(1.2);
+  z-index: 1;
+} 
+
+
+.Topics {
+  position: absolute;
+  right:0;
+  top: 5rem;
+  width: 30%;
+  min-width: 300px;
+  max-width: 900px;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  overflow: hidden;
+  transition: all ease 0.5s;
+  border-radius: 25px 0 0 25px;
+}
+
+.in{
+  animation: in 0.5s ease-in-out;
+}
+
+.out{
+  animation: out 0.5s ease-in-out;
+}
+
+@keyframes in{
+  0% {
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(0)
+  }
+}
+
+@keyframes out{
+  0% {
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(100%)
+  }
+}
+.topicsSpace {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  transition: all ease-in-out 0.5s;
+  background-color: rgb(226, 243, 244, 0.1);
+  border-radius: 25px;
+}
+
+.closeTopics{
+  margin: 0.5rem auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #126064;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: all ease-in-out 0.5s;
+}
+
+.hidden {
+  display: none
+}
+
+footer {
+  background-color: #f8f8f830;
+  padding: 5px 10px;
+  bottom: 0px;
+  right: 0;
+  width: auto;
+  margin: auto;
+  position: absolute;
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+/* =========================================== */
+/* =============== TOPIC TABLE =============== */
+/* ===========================================  */
+
+.topicSpace table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  overflow: auto;
+  height: 100%;
+}
+
+.topicSpace table tr {
+  width: 100%;
+}
+
+.LevelTitle{
+  font-family: Oswald;
+  font-size: 1.8rem;
+  color: #126064;
+  text-shadow: 0 0 10px rgba(163, 225, 230, 0.15);
+  font-weight: 800;
+  padding: 1rem;
+  margin: 0;
+}
+
+.TopicName {
+  font-family: Verdana;
+  border-bottom: 1px dotted #dcf8fa;
+  text-align: left;
+  padding: 1rem 0.5rem 0.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #126064;  
+}
+
+.TopicsDescription {
+  font-family: Verdana;
+  font-weight: 500;
+  text-align: left;
+  padding: 0.3rem 0.3rem 1rem 10%;
+  border-bottom: 1px dotted #dcf8fa;
+  color: #044043;
+  font-size: 0.85rem;
+}
+
+:root {
+  --btn0: url("https://imgur.com/j9CaPwN.png");
+  --btn1: url("https://imgur.com/q5LXS2J.png");
+  --btn2: url("https://imgur.com/5u7Qqo9.png");
+  --btn3: url("https://imgur.com/rTsmbKL.png");
+  --btn4: url("https://imgur.com/xCwLOci.png");
+  --btn5: url("https://imgur.com/s5oGV9W.png");
+  --btn6: url("https://imgur.com/Xr7bLgI.png");
+  --btn7: url("https://imgur.com/oERO7f5.png");
+  --btn8: url("https://imgur.com/sSJkE46.png");
+  --btn9: url("https://imgur.com/BvjCdrR.png");
+  --btn10: url("https://imgur.com/kkkpF7y.png");
+  --btn11: url("https://imgur.com/tqmGigX.png");
+  --btn12: url("https://imgur.com/9Q0gy6W.png");
+
+  --Hbtn0:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/0.png");
+  --Hbtn1:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/1.png");
+  --Hbtn2:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/2.png");
+  --Hbtn3:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/3.png");
+  --Hbtn4:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/4.png");
+  --Hbtn5:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/5.png");
+  --Hbtn6:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/6.png");
+  --Hbtn7:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/7.png");
+  --Hbtn8:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/8.png");
+  --Hbtn9:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/9.png");
+  --Hbtn10: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/10.png");
+  --Hbtn11: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/11.png");
+  --Hbtn12: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/12.png");
+
+
+  
+  --background-color: transparent;
+  --background-size: 100%;
+  --background-position: center;
+  --background-repeat: no-repeat;
+
+}
+
+/* --- COLORES CICLADOS CADA 5 BOTONES --- */
+.levels-grid .level-btn:nth-child(13n + 1) {
+  background-image: var(--btn0);
+}
+
+.levels-grid .level-btn:nth-child(13n + 2) {
+    background-image: var(--btn1);
+}
+
+.levels-grid .level-btn:nth-child(13n + 3) {
+    background-image: var(--btn2);
+}
+
+.levels-grid .level-btn:nth-child(13n + 4) {
+    background-image: var(--btn3);
+}
+
+.levels-grid .level-btn:nth-child(13n + 5) {
+    background-image: var(--btn4);
+}
+
+.levels-grid .level-btn:nth-child(13n + 6) {
+    background-image: var(--btn5);
+}
+
+.levels-grid .level-btn:nth-child(13n + 7) {
+    background-image: var(--btn6);
+}
+
+.levels-grid .level-btn:nth-child(13n + 8) {
+    background-image: var(--btn7);
+}
+
+.levels-grid .level-btn:nth-child(13n + 9) {
+    background-image: var(--btn8);
+}
+
+.levels-grid .level-btn:nth-child(13n + 10) {
+    background-image: var(--btn9);
+}
+
+.levels-grid .level-btn:nth-child(13n + 11) {
+    background-image: var(--btn10);
+}
+
+.levels-grid .level-btn:nth-child(13n + 12) {
+    background-image: var(--btn11);
+}
+
+.levels-grid .level-btn:nth-child(13n + 13) {
+    background-image: var(--btn12)
+}
+
+/* ===========HOVER */
+
+
+.levels-grid .level-btn:nth-child(13n + 1):hover {
+  background-image: var(--Hbtn0);
+}
+
+.levels-grid .level-btn:nth-child(13n + 2):hover {
+  background-image: var(--Hbtn1);
+}
+
+.levels-grid .level-btn:nth-child(13n + 3):hover {
+  background-image: var(--Hbtn2);
+}
+
+.levels-grid .level-btn:nth-child(13n + 4):hover {
+  background-image: var(--Hbtn3);
+}
+
+.levels-grid .level-btn:nth-child(13n + 5):hover {
+  background-image: var(--Hbtn4);
+}
+
+.levels-grid .level-btn:nth-child(13n + 6):hover {
+  background-image: var(--Hbtn5);
+}
+
+.levels-grid .level-btn:nth-child(13n + 7):hover {
+  background-image: var(--Hbtn6);
+}
+
+.levels-grid .level-btn:nth-child(13n + 8):hover {
+  background-image: var(--Hbtn7);
+}
+
+.levels-grid .level-btn:nth-child(13n + 9):hover {
+  background-image: var(--Hbtn8);
+}
+
+.levels-grid .level-btn:nth-child(13n + 10):hover {
+  background-image: var(--Hbtn9);
+}
+
+.levels-grid .level-btn:nth-child(13n + 11):hover {
+  background-image: var(--Hbtn10);
+}
+
+.levels-grid .level-btn:nth-child(13n + 12):hover {
+  background-image: var(--Hbtn11);
+}
+
+.levels-grid .level-btn:nth-child(13n + 13):hover {
+  background-image: var(--Hbtn12);
+}
