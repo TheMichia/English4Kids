@@ -107,7 +107,23 @@ body {
   transform: scale(1.2);
   z-index: 1;
 } 
+.levels-grid .level-btn:focus {
+  transform: scale(1.2);
+  z-index: 1;
+  animation: pulse 1s infinite;
+}
 
+@keyframes pulse{
+  0%{
+    transform: scale(1.2);
+  }
+  50%{
+    transform: scale(1.3);
+  }
+  100%{
+    transform: scale(1.2)
+  }
+}
 
 .Topics {
   position: absolute;
@@ -217,6 +233,17 @@ footer {
   font-weight: 800;
   padding: 1rem;
   margin: 0;
+}
+
+.LevelSubtitle{
+  font-family: Verdana;
+  font-size: 0.95rem;
+  color: #1b5c5f;
+  text-shadow: 0 0 10px rgb(77, 124, 128, 0.15);
+  font-weight: 600;
+  padding: 0.5rem;
+  margin: 0;
+  border-bottom: 1px dotted #92ced3;
 }
 
 .TopicName {
