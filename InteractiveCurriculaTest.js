@@ -119,6 +119,12 @@ function openTopics(level) {
   title.className = "LevelTitle";
   title.textContent = `Level ${level}`;
   container.appendChild(title);
+  
+  // subtitulo
+  const H3 = document.createElement("h3");
+    H3.className = "LevelSubtitle";
+    H3.textContent = `En este Nivel tu hijo aprenderá:`;
+  container.appendChild(H3);
 
   // Contenedor topics
   const topicsSpace = document.createElement("div");
