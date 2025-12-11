@@ -2,7 +2,7 @@ body {
   background-image: url("https://i.imgur.com/QnKuamC.gif");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top left ;
+  background-position: top left;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
@@ -21,12 +21,95 @@ body {
   padding: 1rem;
   margin: 0;
   height: 90%;
-  width: 95%; 
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: left;
+  align-items: flex-start;
   border-radius: 25px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width:100%;
+  
+}
+
+.HEaderText {
+  text-align: center;
+  /* margin: 0 auto */
+}
+
+.HEaderText h4 {
+  font-family: Verdana;
+  font-size: 0.9rem;
+  color: #126064;
+  text-shadow: 0 0 10px rgba(163, 225, 230, 0.15);
+  font-weight: 600
+}
+
+.MainContainer img {
+  height: 100px;
+  width: 100px;
+  margin: 0.5rem 0.5rem 0 0;
+}
+
+
+.CEFRTitle {
+  font-family: Oswald;
+  font-size: 1.2rem;
+  color: #126064;
+  text-shadow: 0 0 10px rgb(90, 146, 150, 0.15);
+  font-weight: 800;
+  padding: 0.5rem;
+  border-bottom: 1px dotted #219fa6;
+}
+
+.CEFR-Table td {
+  font-family: Verdana;
+  font-size: 1rem;
+  color: #126064;
+  font-weight: 600;
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px dotted #bbdcdd;
+  border-collapse: collapse;
+}
+
+.CEFRDesc {
+  font-family: Verdana;
+  font-size: 0.9rem;
+  color: #126064;
+  font-weight: 500;
+  padding: 0 0.5rem;
+  text-align: left
+}
+
+
+.Guarantee {
+  /* position: absolute; */
+  /* bottom: 3rem;
+  left: 3rem; */
+  width: 80%;
+  max-width: 90%;
+  max-height: 20%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem;
+  text-align: left;
+  font-family: Verdana;
+  font-size: 0.8rem;
+  color: #126064;
+  line-height: 1.2;
+  font-weight: 500;
+  /* z-index: 2; */
+
+
+
 }
 
 .SyllabusTitle {
@@ -52,6 +135,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   transition: all ease 0.5s;
+  z-index: 1;
 }
 
 .expanded {
@@ -65,9 +149,6 @@ body {
   width: 68%;
   height: 100%;
 }
-
-
-
 
 /* --- GRID --- */
 .levels-grid {
@@ -87,18 +168,33 @@ body {
 
 /* --- BOTONES --- */
 .level-btn {
-  color: transparent;
+  color: #126064;
+  font-family: Oswald;
+  font-size: 1rem;
   padding: 12px;
   cursor: pointer;
   border: none;
   font-weight: bold;
   width: 100%;
   height: 100%;
+  max-width: calc(100vw/12);
   transition: all ease 0.5s;
   background-color: var(--background-color);
   background-size: var(--background-size);
   background-position: var(--background-position);
   background-repeat: var(--background-repeat);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.ready4Masters{
+  position:absolute;
+  top: 25rem;
+  right: 8rem;
+  width: 1rem;
+  margin-bottom: 3rem;
+  height: 1rem;
 }
 
 /* lo que todos los btns siempre llevan al haber hover */
@@ -106,28 +202,32 @@ body {
   transition: all ease 0.3s;
   transform: scale(1.2);
   z-index: 1;
-} 
+}
+
 .levels-grid .level-btn:focus {
   transform: scale(1.2);
   z-index: 1;
+  border: none;
   animation: pulse 1s infinite;
 }
 
-@keyframes pulse{
-  0%{
+@keyframes pulse {
+  0% {
     transform: scale(1.2);
   }
-  50%{
+
+  50% {
     transform: scale(1.3);
   }
-  100%{
+
+  100% {
     transform: scale(1.2)
   }
 }
 
 .Topics {
   position: absolute;
-  right:0;
+  right: 0;
   top: 5rem;
   width: 30%;
   min-width: 300px;
@@ -145,31 +245,34 @@ body {
   border-radius: 25px 0 0 25px;
 }
 
-.in{
+.in {
   animation: in 0.5s ease-in-out;
 }
 
-.out{
+.out {
   animation: out 0.5s ease-in-out;
 }
 
-@keyframes in{
+@keyframes in {
   0% {
     transform: translateX(100%);
   }
-  100%{
+
+  100% {
     transform: translateX(0)
   }
 }
 
-@keyframes out{
+@keyframes out {
   0% {
     transform: translateX(0);
   }
-  100%{
+
+  100% {
     transform: translateX(100%)
   }
 }
+
 .topicsSpace {
   overflow: auto;
   width: 100%;
@@ -179,7 +282,7 @@ body {
   border-radius: 25px;
 }
 
-.closeTopics{
+.closeTopics {
   margin: 0.5rem auto;
   padding: 1rem;
   border-radius: 10px;
@@ -225,7 +328,7 @@ footer {
   width: 100%;
 }
 
-.LevelTitle{
+.LevelTitle {
   font-family: Oswald;
   font-size: 1.8rem;
   color: #126064;
@@ -235,7 +338,7 @@ footer {
   margin: 0;
 }
 
-.LevelSubtitle{
+.LevelSubtitle {
   font-family: Verdana;
   font-size: 0.95rem;
   color: #1b5c5f;
@@ -253,7 +356,7 @@ footer {
   padding: 1rem 0.5rem 0.2rem;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #126064;  
+  color: #126064;
 }
 
 .TopicsDescription {
@@ -267,36 +370,36 @@ footer {
 }
 
 :root {
-  --btn0: url("https://imgur.com/j9CaPwN.png");
-  --btn1: url("https://imgur.com/q5LXS2J.png");
-  --btn2: url("https://imgur.com/5u7Qqo9.png");
-  --btn3: url("https://imgur.com/rTsmbKL.png");
-  --btn4: url("https://imgur.com/xCwLOci.png");
-  --btn5: url("https://imgur.com/s5oGV9W.png");
-  --btn6: url("https://imgur.com/Xr7bLgI.png");
-  --btn7: url("https://imgur.com/oERO7f5.png");
-  --btn8: url("https://imgur.com/sSJkE46.png");
-  --btn9: url("https://imgur.com/BvjCdrR.png");
-  --btn10: url("https://imgur.com/kkkpF7y.png");
-  --btn11: url("https://imgur.com/tqmGigX.png");
-  --btn12: url("https://imgur.com/9Q0gy6W.png");
+  --btn0: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/0.svg");
+  --btn1: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/1.svg");
+  --btn2: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/2.svg");
+  --btn3: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/3.svg");
+  --btn4: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/4.svg");
+  --btn5: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/5.svg");
+  --btn6: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/6.svg");
+  --btn7: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/7.svg");
+  --btn8: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/8.svg");
+  --btn9: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/9.svg");
+  --btn10: url("https://raw.githubusercontent.com/TheMichia/English4Kids/49ab6c5a1cbdcfa675c471742c64e575b9a91640/Levels/10.svg");
+  --btn11: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/11.svg");
+  --btn12: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/12.svg");
 
-  --Hbtn0:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/0.png");
-  --Hbtn1:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/1.png");
-  --Hbtn2:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/2.png");
-  --Hbtn3:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/3.png");
-  --Hbtn4:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/4.png");
-  --Hbtn5:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/5.png");
-  --Hbtn6:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/6.png");
-  --Hbtn7:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/7.png");
-  --Hbtn8:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/8.png");
-  --Hbtn9:  url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/9.png");
+  --Hbtn0: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/0.png");
+  --Hbtn1: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/1.png");
+  --Hbtn2: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/2.png");
+  --Hbtn3: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/3.png");
+  --Hbtn4: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/4.png");
+  --Hbtn5: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/5.png");
+  --Hbtn6: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/6.png");
+  --Hbtn7: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/7.png");
+  --Hbtn8: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/8.png");
+  --Hbtn9: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/9.png");
   --Hbtn10: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/10.png");
   --Hbtn11: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/11.png");
   --Hbtn12: url("https://raw.githubusercontent.com/TheMichia/English4Kids/refs/heads/main/Levels-Hover/12.png");
 
 
-  
+
   --background-color: transparent;
   --background-size: 100%;
   --background-position: center;
@@ -310,55 +413,56 @@ footer {
 }
 
 .levels-grid .level-btn:nth-child(13n + 2) {
-    background-image: var(--btn1);
+  background-image: var(--btn1);
 }
 
 .levels-grid .level-btn:nth-child(13n + 3) {
-    background-image: var(--btn2);
+  background-image: var(--btn2);
+
 }
 
 .levels-grid .level-btn:nth-child(13n + 4) {
-    background-image: var(--btn3);
+  background-image: var(--btn3);
 }
 
 .levels-grid .level-btn:nth-child(13n + 5) {
-    background-image: var(--btn4);
+  background-image: var(--btn4);
 }
 
 .levels-grid .level-btn:nth-child(13n + 6) {
-    background-image: var(--btn5);
+  background-image: var(--btn5);
 }
 
 .levels-grid .level-btn:nth-child(13n + 7) {
-    background-image: var(--btn6);
+  background-image: var(--btn6);
 }
 
 .levels-grid .level-btn:nth-child(13n + 8) {
-    background-image: var(--btn7);
+  background-image: var(--btn7);
 }
 
 .levels-grid .level-btn:nth-child(13n + 9) {
-    background-image: var(--btn8);
+  background-image: var(--btn8);
 }
 
 .levels-grid .level-btn:nth-child(13n + 10) {
-    background-image: var(--btn9);
+  background-image: var(--btn9);
 }
 
 .levels-grid .level-btn:nth-child(13n + 11) {
-    background-image: var(--btn10);
+  background-image: var(--btn10);
 }
 
 .levels-grid .level-btn:nth-child(13n + 12) {
-    background-image: var(--btn11);
+  background-image: var(--btn11);
 }
 
 .levels-grid .level-btn:nth-child(13n + 13) {
-    background-image: var(--btn12)
+  background-image: var(--btn12)
 }
 
 /* ===========HOVER */
-
+/* 
 
 .levels-grid .level-btn:nth-child(13n + 1):hover {
   background-image: var(--Hbtn0);
@@ -410,4 +514,4 @@ footer {
 
 .levels-grid .level-btn:nth-child(13n + 13):hover {
   background-image: var(--Hbtn12);
-}
+} */
