@@ -87,6 +87,8 @@ function loadKidsIntensivoTest() {
   const levelsGrid = document.getElementById("levelsGrid");
   levelsGrid.innerHTML = ""; // limpiar botones previos
 
+  const filtroLevels = [2, 4, 7, 9];
+
   // Crear botones dinámicos según keys del JSON (0-10)
   Object.keys(data)
     .sort((a, b) => parseInt(a) - parseInt(b))
@@ -94,23 +96,46 @@ function loadKidsIntensivoTest() {
       const btn = document.createElement("button");
       btn.className = "level-btn";
       btn.dataset.level = level;
-      btn.textContent = `Level ${level}`;
+
+      const numLevel = parseInt(level);
+
+      // Textos especiales
+      if (filtroLevels.includes(numLevel)) {
+        btn.textContent = ``;
+      } else if (numLevel === 10) {
+        btn.innerHTML = ``;
+      } else {
+        btn.textContent = ``;
+      }
+
       btn.onclick = () => openTopics(level);
       levelsGrid.appendChild(btn);
     });
 }
 
+
 // ----------------------
 // Abrir topics en el div #Topics
+
+const CEFRInfo = [
+  { range: [0, 2], cefr: "Pre-A1", desc: "Puede entender palabras y frases básicas y usar saludos simples." },
+  { range: [3, 5], cefr: "A1", desc: "Puede comunicarse en situaciones sencillas y cotidianas; entiende frases básicas." },
+  { range: [6, 8], cefr: "A2", desc: "Puede manejar conversaciones simples y describir su entorno y actividades." },
+  { range: [9, 10], cefr: "Pre-B1", desc: "Puede interactuar en situaciones conocidas y expresar opiniones." }
+];
+
+function getCEFR(level) {
+  return CEFRInfo.find(item => level >= item.range[0] && level <= item.range[1]);
+}
+
+
 // ----------------------
 function openTopics(level) {
   const topics = topicsData[syllabusName][level];
   const container = document.getElementById("Topics");
   if (!container) return;
 
-  container.classList.remove("hidden"); // mostrar
-  container.classList.remove("out");
-  container.classList.remove("in");
+  container.classList.remove("hidden", "out", "in");
   container.classList.add("in");
   container.innerHTML = "";
 
@@ -119,11 +144,23 @@ function openTopics(level) {
   title.className = "LevelTitle";
   title.textContent = `Level ${level}`;
   container.appendChild(title);
-  
-  // subtitulo
+
+  // CEFR INFO
+  const cefrData = getCEFR(level);
+  if (cefrData) {
+    const cefrBox = document.createElement("div");
+    cefrBox.className = "CEFRBox";
+    cefrBox.innerHTML = `
+      <h3 class="CEFRTitle">Equivalencia CEFR: <strong>${cefrData.cefr}</strong></h3>
+      <p class="CEFRDesc">${cefrData.desc}</p>
+    `;
+    container.appendChild(cefrBox);
+  }
+
+  // Subtítulo
   const H3 = document.createElement("h3");
-    H3.className = "LevelSubtitle";
-    H3.textContent = `En este Nivel tu hijo aprenderá:`;
+  H3.className = "LevelSubtitle";
+  H3.textContent = `En este Nivel tu hijo/a aprenderá:`;
   container.appendChild(H3);
 
   // Contenedor topics
@@ -137,15 +174,12 @@ function openTopics(level) {
 
     const trTopic = document.createElement("tr");
     trTopic.innerHTML = `
-      <td class="TopicName" >&#9989; ${t}
-      </td>
+      <td class="TopicName">&#9989; ${t}</td>
     `;
 
     const trDesc = document.createElement("tr");
     trDesc.innerHTML = `
-      <td class="TopicsDescription">
-        ${desc}<br />
-      </td>
+      <td class="TopicsDescription">${desc}<br /></td>
     `;
 
     tbody.appendChild(trTopic);
@@ -163,10 +197,11 @@ function openTopics(level) {
   closeBtn.onclick = closeTopics;
   container.appendChild(closeBtn);
 
-      document.querySelector(".Topics").classList.remove("hidden");
+  document.querySelector(".Topics").classList.remove("hidden");
   document.querySelector(".levels-container").classList.add("compressed");
-      document.querySelector(".levels-container").classList.remove("expanded");
+  document.querySelector(".levels-container").classList.remove("expanded");
 }
+
 
 // ----------------------
 // Cerrar topics
@@ -180,3 +215,4 @@ function closeTopics() {
       document.querySelector(".levels-container").classList.remove("compressed");
       document.querySelector(".levels-container").classList.add("expanded");
 }
+
