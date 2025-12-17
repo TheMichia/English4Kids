@@ -1,9 +1,13 @@
 body {
-  background-image: url("https://i.imgur.com/QnKuamC.gif");
-  background-size: cover;
+  /* background-image: url("https://i.imgur.com/QnKuamC.gif"); */
+  /* background-size: cover;
   background-repeat: no-repeat;
   background-position: top left;
-  background-attachment: fixed;
+  background-attachment: fixed; */
+
+  background: linear-gradient(270deg,   #1CA5AB50,  #94C12150,  #F08C2850,  #EB595550,  #EC661950);
+  background-size: 200% 200%; 
+  animation: gradientMove 1s linear infinite;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,6 +19,64 @@ body {
   overflow: hidden;
 }
 
+
+.overlay {
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-family: Oswald;
+  font-size: 2rem;
+  color: #126064;
+  text-shadow: 0 0 10px rgb(27, 72, 75, 0.15);
+  font-weight: 800;
+  animation: fadeOut 3s ease-in-out forwards;
+
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    background-color: rgb(206, 222, 222, 1);
+  }
+
+  25% {
+
+    background-color: rgb(206, 222, 222, 0.7);
+  }
+
+  50% {
+
+    background-color: rgb(206, 222, 222, 0.9);
+  }
+
+  75% {
+
+    background-color: rgb(206, 222, 222, 0.5);
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+    background-color: rgb(206, 222, 222, 1);
+  }
+}
+
+.overlay p {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 20%;
+
+}
 
 .MainContainer {
   background-color: rgba(255, 255, 255, 0.8);
@@ -32,14 +94,31 @@ body {
 .header {
   display: flex;
   flex-direction: row;
+  /* justify-content: space-evenly; */
   justify-content: space-between;
+  /* justify-content: center; */
   align-items: flex-start;
   gap: 2rem;
-  width:100%;
-  
+  width: 100%;
+  padding: 0 0 0 0%;
+  margin: 0;
+
+}
+
+.SyllabusTitle {
+  text-align: center;
+  font-family: Oswald;
+  margin: 0 auto;
+  font-size: 3rem;
+  color: #126064;
+  text-shadow: 0 0 10px rgba(163, 225, 230, 0.15);
+  font-weight: 800;
+  padding: 1rem;
+  border-bottom: 1px dotted #219fa6
 }
 
 .HEaderText {
+  margin: 0 auto;
   text-align: center;
   /* margin: 0 auto */
 }
@@ -65,8 +144,10 @@ body {
   color: #126064;
   text-shadow: 0 0 10px rgb(90, 146, 150, 0.15);
   font-weight: 800;
-  padding: 0.5rem;
+  padding: 0;
   border-bottom: 1px dotted #219fa6;
+  text-align: center;
+  margin: 0;
 }
 
 .CEFR-Table td {
@@ -86,9 +167,20 @@ body {
   color: #126064;
   font-weight: 500;
   padding: 0 0.5rem;
-  text-align: left
+  text-align: left;
+  margin-bottom: 1.5rem;
 }
 
+.CEFRDur {
+  font-family: Verdana;
+  font-size: 0.9rem;
+  color: #126064;
+  text-align: center;
+  font-weight: bold;
+  padding: 0rem;
+  margin: 0 auto 1rem;
+
+}
 
 .Guarantee {
   /* position: absolute; */
@@ -107,21 +199,6 @@ body {
   line-height: 1.2;
   font-weight: 500;
   /* z-index: 2; */
-
-
-
-}
-
-.SyllabusTitle {
-  text-align: center;
-  margin: 0 auto;
-  font-family: Oswald;
-  font-size: 3rem;
-  color: #126064;
-  text-shadow: 0 0 10px rgba(163, 225, 230, 0.15);
-  font-weight: 800;
-  padding: 1rem;
-  border-bottom: 1px dotted #219fa6
 }
 
 .levels-container {
@@ -188,8 +265,8 @@ body {
   align-items: flex-end;
 }
 
-.ready4Masters{
-  position:absolute;
+.ready4Masters {
+  position: absolute;
   top: 55%;
   right: 8rem;
   width: 1rem;
@@ -246,11 +323,11 @@ body {
 }
 
 .in {
-  animation: in 0.5s ease-in-out;
+  animation: in 0.3s ease-in;
 }
 
 .out {
-  animation: out 0.5s ease-in-out;
+  animation: out 0.3s ease-out;
 }
 
 @keyframes in {
@@ -328,14 +405,199 @@ footer {
   width: 100%;
 }
 
+.titlediv {
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+
 .LevelTitle {
   font-family: Oswald;
   font-size: 1.8rem;
   color: #126064;
   text-shadow: 0 0 10px rgba(163, 225, 230, 0.15);
   font-weight: 800;
-  padding: 1rem;
+  padding: 0rem;
+  margin: 0.5rem auto 1rem;
+  text-align: center;
+}
+
+.filterwarning h3 {
+  font-family: Verdana;
+  font-size: 0.95rem;
+  color: #126064;
+  text-shadow: 0 0 10px rgb(95, 48, 48, 0.15);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem auto 0;
+  text-align: center;
+  background-color: #f5ffff;
+  border-radius: 15px;
+}
+
+.filterwarning button {
+  font-family: Verdana;
+  font-size: 0.75rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(163, 225, 230, 0.15);
+  font-weight: 600;
+  padding: 0.7rem;
   margin: 0;
+  text-align: center;
+  border: none;
+  width: auto;
+  max-width: 120px;
+  height: 50px;
+  background-color: #126064;
+  box-shadow: 0 3px 7px rgb(0, 63, 66, 0.1);
+  cursor: pointer;
+  position: absolute;
+  top: 3.5rem;
+  right: 0;
+  border-radius: 25px 0 0 25px;
+}
+
+/* contains filter explatanation white back holder */
+.FilterExpl {
+  /* margin: auto; */
+  background-color: #f5ffff;
+  border-radius: 25px;
+  padding: 1.7rem;
+  z-index: 999;
+  width: 70%;
+  max-width: 1000px;
+  min-width: 10%;
+  height: auto;
+  animation: fadepopIn 0.3s ease-in forwards;
+}
+
+.FilterExplbefore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  /* border-radius: 25px; */
+  animation: fadein 0.3s ease-in forwards;
+  justify-items: center;
+  align-content: center;
+}
+
+.FilterExpl h1 {
+  font-family: Oswald;
+  font-size: 2rem;
+  color: #126064;
+  font-weight: 800;
+  padding: 0.5rem 1rem 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Filtercontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.FilterExpl p {
+  font-family: Roboto Flex;
+  font-size: 1.15rem;
+  color: #126064;
+  font-weight: 400;
+  padding: 0.5rem 2rem;
+  margin: 0.5rem auto 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.FilterExpl ul {
+  font-family: Roboto Flex;
+  font-size: 1.15rem;
+  color: #126064;
+  font-weight: 400;
+  padding: 0.5rem 2rem;
+  margin: 0.5rem auto;
+  line-height: 1.2;
+  text-align: left
+}
+
+.FilterExpl li {
+  font-family: Roboto Flex;
+  font-size: 1.15rem;
+  color: #126064;
+  font-weight: 400;
+  padding: 0.5rem 0.5rem;
+  margin: 0.5rem 0;
+  line-height: 1.2;
+}
+
+.FilterExpl button {
+  width: 100%;
+  height: auto;
+  align-self: center;
+  margin: 0.5rem auto;
+  padding: 0.85rem;
+  border-radius: 10px;
+  background-color: #126064;
+  color: white;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+@keyframes fadepopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fadepopout {
+  animation: fadepopout 0.3s ease-out forwards;
+}
+
+@keyframes fadepopout {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5)
+  }
+}
+
+.fadeout {
+  animation: fadeout 0.3s ease-out forwards;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0
+  }
 }
 
 .LevelSubtitle {
@@ -363,11 +625,94 @@ footer {
   font-family: Verdana;
   font-weight: 500;
   text-align: left;
-  padding: 0.3rem 0.3rem 1rem 10%;
+  padding: 0rem 0.3rem 0rem 10%;
   border-bottom: 1px dotted #dcf8fa;
   color: #044043;
   font-size: 0.85rem;
 }
+
+.extrainfo {
+  padding: 0 0.5rem;
+  margin: 0 auto;
+}
+
+.extrainfo h3 {
+  font-family: Verdana;
+  font-size: 0.85rem;
+  color: #126064;
+  font-weight: 500;
+  text-align: center
+}
+
+.hoveringbutton {
+  font-family: Verdana;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  z-index: 1;
+  width: 30%;
+  height: auto;
+  align-self: center;
+  margin: 0.5rem 0;
+  padding: 0.8rem 0.5rem;
+  border-radius: 25px;
+  background-color: white;
+  color: #044043;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border: none;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+.hoveringbutton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  background: conic-gradient(from var(--angle),
+            #1CA5AB80,
+      #94C12180,
+      #F08C2880,
+      #EB595580,
+      #EC661980,
+                             #1CA5AB80
+      );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-ma: xor;
+  mask-composite: exclude;
+  animation: rotate 4s linear infinite;
+  z-index: 1;
+  border-radius: 25px
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 :root {
   --btn0: url("https://raw.githubusercontent.com/TheMichia/English4Kids/e2e6d3c9611d96f1e8fe30ca4f744d02cc2083ee/Levels/0.svg");
