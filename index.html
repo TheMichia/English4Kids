@@ -1,0 +1,90 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Curriculum</title>
+    <link rel="stylesheet" href="InteractiveCurricula.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body onload="init();" style="margin: 0px">
+    <!-- here loads first info  -->
+    <div class="Info-overlay">
+      <p>
+        Esta Curricula es interactiva,<br />
+        haz click en los niveles para ver los temas a aprender.
+      </p>
+    </div>
+    <!-- contains syllabus options -->
+    <div id="syllabusGrid" class="syllabus-grid show"></div>
+    <!-- HEADER, levels and topics load within maincontainer in JS -->
+    <div class="MainContainer hidden" id="MainContainer"></div>
+      <!-- guarantee loads in JS -->
+    </div>
+
+    <footer>
+      Made with ♥ by Michelle Hernández | © 2025 English4Kids. All rights
+      reserved. |
+      <span id="version"></span>
+    </footer>
+
+    <script src="InteractiveCurricula.js"></script>
+    <script src="https://gleitz.github.io/midi-js-soundfonts/FluidR3_GM/kalimba-mp3.js"></script>
+    <script>
+      const NOTES = [
+        "G4",
+        "Ab4",
+        "Bb4",
+        "C5",
+        "Db5",
+        "Eb5",
+        "F5",
+        "G5",
+        "Ab5",
+        "Bb5",
+        "C6",
+        "Db6",
+        "Eb6",
+      ];
+
+      function assignSoundsToLevels() {
+        const buttons = document.querySelectorAll(".level-btn");
+        const soundData = MIDI.Soundfont.kalimba;
+
+        const totalButtons = buttons.length;
+        const totalNotes = NOTES.length;
+
+        buttons.forEach((btn, index) => {
+          // Asignación de sonido: el último botón siempre recibe la última nota (Eb6)
+          const noteIndex = totalNotes - totalButtons + index;
+          const note = NOTES[noteIndex] || NOTES[NOTES.length - 1]; // si hay menos botones que notas, usar últimas notas
+
+          if (!soundData[note]) {
+            console.warn("Nota no encontrada:", note);
+            return;
+          }
+
+          const audio = new Audio(soundData[note]);
+          audio.volume = 0.2; // Bajamos el volumen al 30%
+
+          btn.addEventListener("click", () => {
+            audio.currentTime = 0;
+            audio.play();
+          });
+
+          btn.addEventListener("mouseenter", () => {
+            audio.currentTime = 0;
+            audio.play();
+          });
+        });
+      }
+
+      window.addEventListener("load", assignSoundsToLevels);
+    </script>
+  </body>
+</html>
