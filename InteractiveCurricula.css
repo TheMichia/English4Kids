@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'English4Kids';
-  src: url('Assets/fonts/English4Kids.ttf') format('truetype');
+  src: url('/Assets/fonts/English4Kids.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -609,7 +609,7 @@ table {
   margin: 1rem auto;
   padding: 0.5rem 1rem;
   overflow: auto;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .topicSpace table tr {
@@ -1116,7 +1116,7 @@ table {
 }
 
 .level {
-  font-family: English4Kids;
+  font-family: English4Kids, Oswald;
   color: white;
   font-weight: 500;
   margin: 0;
