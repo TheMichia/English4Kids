@@ -373,7 +373,7 @@ function loadSyllabus(name, push = true) {
 
   const subtitle = document.createElement("h4");
 
-  subtitle.textContent = `Este curso tiene una duración de ${duracionCurso} meses, haz click en cada nivel para conocer más.`;
+  subtitle.textContent = `Este curso tiene una duración de ${duracionCurso} meses. Haz click en cada nivel para conocer más.`;
   titlediv.appendChild(subtitle);
   const logo = document.createElement("img");
   logo.src =
