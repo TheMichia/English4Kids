@@ -208,7 +208,7 @@ const syllabusConfig = {
     filterLevels: [7, 9],
     nextsyllabus: "Kids (Intensivo) 8-12",
     finalcefrhtml: `<h3> Al final de este nivel tu hijo/a alcanzará un nivel de inglés elemental (A2).</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Kids (Intensivo) 8-12": {
     duracionCurso: 36.5,
@@ -217,7 +217,7 @@ const syllabusConfig = {
     filterLevels: [2, 4, 7, 9],
     nextsyllabus: "Kids Masters",
     finalcefrhtml: `<h3> Al final de este nivel tu hijo/a alcanzará un nivel de inglés intermedio (B1-B2)</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Kids (Super Intensivo) 8-12": {
     duracionCurso: 21,
@@ -226,7 +226,7 @@ const syllabusConfig = {
     filterLevels: [4, 7, 9],
     nextsyllabus: "Kids Masters",
     finalcefrhtml: `<h3> Al final de este nivel tu hijo/a alcanzará un nivel de inglés intermedio (B1-B2)</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Kids Masters": {
     duracionCurso: 10,
@@ -234,14 +234,14 @@ const syllabusConfig = {
     filterLevels: [4, 8],
     nextsyllabus: "Kids Masters 2",
     finalcefrhtml: `<h3> Al final de este nivel tu hijo/a alcanzará un nivel de inglés Avanzado (C1)</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Kids Masters 2": {
     duracionCurso: 10,
     levelDurationWeeks: 4,
     filterLevels: [4, 8],
     finalcefrhtml: `<h3> Al final de este nivel tu hijo/a alcanzará un nivel de inglés Avanzado (C1)</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Teens 13-17 (3 horas/semana)": {
     duracionCurso: 24,
@@ -250,7 +250,7 @@ const syllabusConfig = {
     filterLevels: [2, 4, 7, 9],
     nextsyllabus: "Teens Masters",
     finalcefrhtml: `<h3> Al final de este nivel tu hijo/a alcanzará un nivel de inglés intermedio (B1-B2)</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Teens 13-17 (5 horas/semana)": {
     duracionCurso: 36.5,
@@ -259,7 +259,7 @@ const syllabusConfig = {
     filterLevels: [4, 7, 9],
     nextsyllabus: "Teens Masters",
     finalcefrhtml: `<h3> Al final de este nivel tu hijo/a alcanzará un nivel de inglés intermedio (B1-B2)</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Teens Masters": {
     duracionCurso: 10,
@@ -267,14 +267,14 @@ const syllabusConfig = {
     filterLevels: [4, 8],
     nextsyllabus: "Teens Masters 2",
     finalcefrhtml: `<h3> Al final de este nivel tu hijo/a alcanzará un nivel de inglés Avanzado (C1)</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Teens Masters 2": {
     duracionCurso: 10,
     levelDurationWeeks: 4,
     filterLevels: [4, 8],
     finalcefrhtml: `<h3> Al final de este nivel tu hijo/a alcanzará un nivel de inglés Avanzado (C1)</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Adults (3hrs/week)": {
     duracionCurso: 12,
@@ -282,7 +282,7 @@ const syllabusConfig = {
     filterLevels: [5, 8],
     nextsyllabus: "Adults Masters (3hrs/week)",
     finalcefrhtml: `<h3> Al final de este nivel alcanzarás un nivel de inglés elemental (A2).</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Adults (5hrs/week)": {
     duracionCurso: 10,
@@ -290,30 +290,337 @@ const syllabusConfig = {
     filterLevels: [5, 8],
     nextsyllabus: "Adults Masters (3hrs/week)",
     finalcefrhtml: `<h3> Al final de este nivel alcanzarás un nivel de inglés elemental (A2).</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Adults Masters (3hrs/week)": {
     duracionCurso: 12,
     levelDurationWeeks: 4,
     filterLevels: [5, 8],
     finalcefrhtml: `<h3> Al final de este nivel alcanzarás un nivel de inglés intermedio (B1-B2)</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
   "Adults Masters (5hrs/week)": {
     duracionCurso: 10,
     levelDurationWeeks: 4,
     filterLevels: [5, 8],
     finalcefrhtml: `<h3> Al final de este nivel alcanzarás un nivel de inglés intermedio (B1-B2)</h3> 
-    <em>Según el Marco Común Europeo (CEFR)</em>`,
+      <em>Según el Marco Común Europeo (CEFR)</em>`,
   },
 };
 //////////////////////////////////////////////////
 
 // ==============================================
+// COURSES AND CAROUSEL
+// ==============================================
+let sidecursosopened = false;
+
+function loadSideAllCursos() {
+  sidecursosopened = true;
+  // backdrop
+  const backdrop = document.createElement("div");
+  const body = document.body;
+  backdrop.className = "backdrop";
+  backdrop.id = "backdrop";
+  backdrop.onclick = closeSideAllCursos;
+  body.appendChild(backdrop);
+  // close button
+  const closebtn = document.createElement("button");
+  closebtn.className = "closeCourses";
+  closebtn.id = "closeCourses";
+  closebtn.innerHTML = "X";
+  closebtn.onclick = closeSideAllCursos;
+  body.appendChild(closebtn);
+  // side menu
+  const sideAllCursos = document.getElementById("hoveringSideAllCursos");
+  sideAllCursos.classList.remove("hoveringSideAllCursos");
+  sideAllCursos.classList.add("openedSideAllCursos");
+  sideAllCursos.innerHTML = `
+  <div class="carouselWrapper">
+
+  <button class="nav left" onclick="scrollCarousel(-1)">‹</button>
+
+  <div class="carousel" id="carousel">
+  
+  <div class="syllabusHolderSideMenu">  
+  <h1>Peques</h1>
+  <div class="twoColumns">
+  <div class="leftCol">
+  <h1>5-7 años</h1>
+  <iframe src="assets/canvas/JUNIORS/icons age groups.html"></iframe>
+<p>Clases divertidas y llenas de juegos, participaciones y movimientos que convierten el inglés en algo natural desde el inicio.</p>
+
+  </div>
+  <div class="rightCol">
+  <h2>De inicios a intermedios</h2>
+  <button onclick="loadSyllabus('Juniors 5-7')">
+  <img src="assets/icons/7.svg">
+  <h3>Juniors</h3> 
+  <h4>3 clases/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  </div>
+  </div>
+  </div>
+  
+  <div class="syllabusHolderSideMenu">
+  <h1>Niños</h1>
+  <div class="twoColumns">
+  <div class="leftCol">
+  <h1>8-12 años</h1>
+  <iframe src="assets/canvas/KIDS/icons age groups.html"></iframe>
+  <p>Clases divertidas e interactivas que convierten el inglés en una habilidad práctica. Aprenden inglés participando, jugando y hablando en cada clase.</p>
+  </div>
+  <div class="rightCol">
+  <h2>De inicios a intermedios</h2>
+  <div class="normal">
+  <button onclick="loadSyllabus('Kids (Intensivo) 8-12')">
+  <img src="assets/icons/8.svg">
+  <h3>Kids <i>(Intensivo)</i></h3>
+  <h4>3 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  <button onclick="loadSyllabus('Kids (Super Intensivo) 8-12')">
+  <img src="assets/icons/8.svg">
+  <h3>Kids <i>(Super Intensivo)</i></h3>
+  <h4>5 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  </div>
+  <h2>Avanzados</h2>
+  <div class="masters">
+  <button onclick="loadSyllabus('Kids Masters')">
+  <img src="assets/icons/8.svg">
+  <h3>Kids Masters</h3>
+  <h4>5 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  <button onclick="loadSyllabus('Kids Masters 2')">
+  <img src="assets/icons/8.svg">
+  <h3>Kids Masters 2</h3>
+  <h4>5 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <div class="syllabusHolderSideMenu">
+  <h1>Adolescentes</h1>
+  <div class="twoColumns">
+  <div class="leftCol">
+  <h1>13-17 años</h1>
+  <iframe src="assets/canvas/TEENS/icons age groups.html"></iframe>
+  <p>Clases interactivas que fortalecen la confianza y la comunicación en inglés. Menos memorización, más fluidez y resultados reales.</p>
+  </div>
+  <div class="rightCol">
+  <h2>De inicios a intermedios</h2>
+  <div class="normal">
+  <button onclick="loadSyllabus('Teens 13-17 (3 horas/semana)')">
+  <img src="assets/icons/9.svg">
+  <h3>Teens  <i>(Intensivo)</i></h3>
+  <h4>3 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  <button onclick="loadSyllabus('Teens 13-17 (5 horas/semana)')">
+  <img src="assets/icons/9.svg">
+  <h3>Teens  <i>(Super Intensivo)</i></h3>
+  <h4>5 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  </div>
+  <h2>Avanzados</h2>
+  <div class="masters">
+  <button onclick="loadSyllabus('Teens Masters')">
+  <img src="assets/icons/9.svg">
+  <h3>Teens Masters</h3>
+  <h4>5 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  <button onclick="loadSyllabus('Teens Masters 2')">
+  <img src="assets/icons/9.svg">
+  <h3>Teens Masters 2</h3>
+  <h4>5 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <div class="syllabusHolderSideMenu">
+  <h1>Adultos</h1>
+  <div class="twoColumns">
+  <div class="leftCol">
+  <h1>Adultos de todas edades</h1>
+  <iframe src="assets/canvas/ADULTS/icons age groups.html"></iframe>
+  <p>Inglés práctico para la vida real con clases activas y coaching personalizado. Habla con seguridad en cualquier contexto y nota el cambio desde las primeras semanas.</p>
+  </div>
+  <div class="rightCol">
+  <h2>De inicios a intermedios</h2>
+  <div class="normal">
+  <button onclick="loadSyllabus('Adults (3hrs/week)')">
+  <img src="assets/icons/10.svg">
+  <h3>Adults <i>(Intensivo)</i></h3>
+  <h4>3 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  <button onclick="loadSyllabus('Adults (5hrs/week)')">
+  <img src="assets/icons/10.svg">
+  <h3>Adults <i>(Super Intensivo)</i></h3>
+  <h4>5 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  </div>
+  <h2>Avanzados</h2>
+  <div class="masters">
+  <button onclick="loadSyllabus('Adults Masters (3hrs/week)')">
+  <img src="assets/icons/10.svg">
+  <h3>Adults Masters<i>(Intensivo)</i></h3>
+  <h4>3 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  <button onclick="loadSyllabus('Adults Masters (5hrs/week)')">
+  <img src="assets/icons/10.svg">
+  <h3>Adults Masters<i>(Super Intensivo)</i></h3>
+  <h4>5 horas/semana</h4>
+  <div class="explore">Explorar</div>
+  </button>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  </div>
+
+  <button class="nav right" onclick="scrollCarousel(1)">›</button>
+
+</div>
+  `;
+  setTimeout(initCarousel, 0);
+
+  body.appendChild(sideAllCursos);
+}
+
+function closeSideAllCursos() {
+  sidecursosopened = false;
+
+  document.getElementById("backdrop")?.remove();
+  document.getElementById("closeCourses")?.remove();
+
+  const sideAllCursos = document.getElementById("hoveringSideAllCursos");
+  sideAllCursos.classList.remove("openedSideAllCursos");
+  sideAllCursos.classList.add("hoveringSideAllCursos");
+  sideAllCursos.innerHTML = `<button onclick="loadSideAllCursos()"><b>☰</b> Ver todos nuestros cursos</button>`;
+
+  const carousel = document.getElementById("carousel");
+  if (carouselInterval) {
+    clearInterval(carouselInterval);
+    carouselInterval = null;
+  }
+  carousel = null;
+}
+
+let carousel = null;
+let carouselInterval = null;
+
+/* ===============================
+   INIT
+================================ */
+function initCarousel() {
+  carousel = document.getElementById("carousel");
+  if (!carousel) return;
+
+  // limpiar interval previo (importantísimo)
+  if (carouselInterval) {
+    clearInterval(carouselInterval);
+    carouselInterval = null;
+  }
+
+  /* ===============================
+     HELPERS
+  ================================ */
+  function getCardWidth() {
+    const card = carousel.querySelector(".syllabusHolderSideMenu");
+    if (!card) return carousel.clientWidth;
+
+    const cardWidth = card.getBoundingClientRect().width;
+
+    const styles = getComputedStyle(carousel);
+    const gap = parseFloat(styles.columnGap || styles.gap || 0);
+
+    return cardWidth + gap;
+  }
+
+  /* ===============================
+     BOTONES (left / right)
+  ================================ */
+  window.scrollCarousel = (direction) => {
+    if (!carousel) return;
+
+    const cardWidth = getCardWidth();
+
+    carousel.scrollBy({
+      left: cardWidth * direction,
+      behavior: "smooth",
+    });
+  };
+
+  /* ===============================
+     AUTO-SCROLL
+  ================================ */
+  carouselInterval = setInterval(() => {
+    const cardWidth = getCardWidth();
+
+    const atEnd =
+      carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5;
+
+    if (atEnd) {
+      carousel.scrollTo({
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      carousel.scrollBy({
+        left: cardWidth,
+        behavior: "smooth",
+      });
+    }
+  }, 4000);
+
+  /* ===============================
+     UX PRO: PAUSE ON HOVER
+  ================================ */
+  carousel.addEventListener("mouseenter", () => {
+    if (carouselInterval) {
+      clearInterval(carouselInterval);
+      carouselInterval = null;
+    }
+  });
+
+  carousel.addEventListener("mouseleave", () => {
+    if (!carouselInterval) {
+      initCarousel(); // restart clean
+    }
+  });
+}
+
+//////////////////////////////////////////////////
+
+// ==============================================
 // FUNCIONES DE SYLLABUS & LEVELS
 // ==============================================
+
 function loadSyllabus(name, push = true) {
-  topicsopened = false;
+
+  const infooverlay = document.createElement("div");
+  const body = document.body;
+      infooverlay.className = "Info-overlay";
+      infooverlay.id = "Info-overlay";
+      infooverlay.innerHTML = `<p>Esta currícula es interactiva,<br />haz click en los niveles para ver los temas a aprender.</p>`
+      infooverlay.onclick = () => infooverlay.remove();
+  body.appendChild(infooverlay);
+ 
   // contains all syllabus options
   const grid = document.getElementById("syllabusGrid");
   const container = document.getElementById("MainContainer");
@@ -417,13 +724,28 @@ function loadSyllabus(name, push = true) {
   const guaranteeDiv = document.createElement("div");
   guaranteeDiv.className = "Guarantee";
   guaranteeDiv.innerHTML = `
-    <p class="Guarantee-Preview">
-      Nuestra currícula integra los principios de <b>TPR</b><sup>1</sup>, <b>Spiral Curriculum</b> y <b>CLT</b><sup>2</sup>. Diseñada bajo estándares internacionales y respaldada por <b>metodólogos de clase mundial</b>, totalmente alineada con el <b>CEFR</b><sup>3</sup>. 
-    </p>
-<button class="openGuarantee" onclick="openGuarantee()">Haz clic aquí para conocer más sobre nuestra currícula</button>.
-    
-  `;
+      <p class="Guarantee-Preview">
+        Nuestra currícula integra los principios de <b>TPR</b><sup>1</sup>, <b>Spiral Curriculum</b> y <b>CLT</b><sup>2</sup>. Diseñada bajo estándares internacionales y respaldada por <b>metodólogos de clase mundial</b>, totalmente alineada con el <b>CEFR</b><sup>3</sup>. 
+      </p>
+  <button class="openGuarantee" onclick="openGuarantee()">Haz clic aquí para conocer más sobre nuestra currícula</button>.
+
+    `;
   container.appendChild(guaranteeDiv);
+
+// SIDE BUTTON
+if (sidecursosopened) {
+  closeSideAllCursos();
+  sidecursosopened = false;
+} else {
+  const body = document.body;
+  const sideAllCursos = document.createElement("div");
+  sideAllCursos.className = "hoveringSideAllCursos";
+  sideAllCursos.id = "hoveringSideAllCursos";
+  sideAllCursos.innerHTML = `<button onclick="loadSideAllCursos()"><b>☰</b> Ver todos nuestros cursos</button>`;
+  body.appendChild(sideAllCursos);
+}
+
+topicsopened = false;
 }
 
 const mobileQuery = window.matchMedia("(max-width: 768px)");
@@ -431,21 +753,21 @@ const mobileQuery = window.matchMedia("(max-width: 768px)");
 function renderLevelButton(btn, levelNum, levelInfo, isMobile) {
   if (isMobile) {
     btn.innerHTML = `
-      <div class="vLine"></div>
-      <div class="levelPreview">
-        <h1 class="level">Nivel ${levelNum}</h1>
-        <p class="filterWarningPreview">${levelInfo}</p>
-      </div>
-    `;
+        <div class="vLine"></div>
+        <div class="levelPreview">
+          <h1 class="level">Nivel ${levelNum}</h1>
+          <p class="filterWarningPreview">${levelInfo}</p>
+        </div>
+      `;
   } else {
     btn.innerHTML = `
-      <div class="WebLevelHolder">
-        <div class="WebLevelSquare">
-          <h1 class="level">Nivel <br> ${levelNum}</h1>
+        <div class="WebLevelHolder">
+          <div class="WebLevelSquare">
+            <h1 class="level">Nivel <br> ${levelNum}</h1>
+          </div>
+          <p class="filterWarningPreview">${levelInfo}</p>
         </div>
-        <p class="filterWarningPreview">${levelInfo}</p>
-      </div>
-    `;
+      `;
   }
 }
 
@@ -470,37 +792,37 @@ function openGuarantee() {
   const GuaranteeExpl = document.createElement("div");
   GuaranteeExpl.className = "GuaranteeExpl";
   GuaranteeExpl.innerHTML = `
-<h1>🚀 Currícula English4Kids: Aprender Inglés Activamente</h1>
+  <h1>🚀 Currícula English4Kids: Aprender Inglés Activamente</h1>
 
-<h2>💪 Aprendizaje Activo</h2>
-<p>
-  Nuestra currícula Kids integra los principios de 
-  <b>TPR</b> (<i>Total Physical Response</i>), 
-  <b>Spiral Curriculum</b> y 
-  <b>CLT</b> (<i>Communicative Language Teaching</i>).
-  Esto significa que los estudiantes <b>aprenden activamente</b>: 
-  escuchan, se mueven, interactúan y usan el idioma en <b>situaciones reales</b>, reforzando la comprensión y la retención del contenido.
-</p>
+  <h2>💪 Aprendizaje Activo</h2>
+  <p>
+    Nuestra currícula Kids integra los principios de 
+    <b>TPR</b> (<i>Total Physical Response</i>), 
+    <b>Spiral Curriculum</b> y 
+    <b>CLT</b> (<i>Communicative Language Teaching</i>).
+    Esto significa que los estudiantes <b>aprenden activamente</b>: 
+    escuchan, se mueven, interactúan y usan el idioma en <b>situaciones reales</b>, reforzando la comprensión y la retención del contenido.
+  </p>
 
-<h2>🔄 Aprendizaje en Espiral</h2>
-<p>
-  Además, la currícula está diseñado en <b>espiral</b>, de manera que los temas se revisitan continuamente, <b>profundizando cada vez más</b> y permitiendo que todos los niños avancen <b>a su propio ritmo</b> sin quedarse atrás.
-</p>
+  <h2>🔄 Aprendizaje en Espiral</h2>
+  <p>
+    Además, la currícula está diseñado en <b>espiral</b>, de manera que los temas se revisitan continuamente, <b>profundizando cada vez más</b> y permitiendo que todos los niños avancen <b>a su propio ritmo</b> sin quedarse atrás.
+  </p>
 
-<h2>🌐 Estándares Internacionales</h2>
-<p>
-  La currícula también incorpora <b>estándares internacionales</b> desarrollados por <b>metodólogos de clase mundial</b> y se encuentra alineada con el 
-  <b>Marco Común Europeo de Referencia</b> (<i>CEFR</i>), lo que nos permite <b>medir el progreso real de cada estudiante</b> y garantizar que cada nivel esté validado según criterios internacionales.
-</p>
+  <h2>🌐 Estándares Internacionales</h2>
+  <p>
+    La currícula también incorpora <b>estándares internacionales</b> desarrollados por <b>metodólogos de clase mundial</b> y se encuentra alineada con el 
+    <b>Marco Común Europeo de Referencia</b> (<i>CEFR</i>), lo que nos permite <b>medir el progreso real de cada estudiante</b> y garantizar que cada nivel esté validado según criterios internacionales.
+  </p>
 
-<h2>🎯 Clases Transformadoras</h2>
-<p>
-  En conjunto, estas metodologías aseguran que las clases sean <b>efectivas, dinámicas y transformadoras</b>, enfocadas en la acción, la comunicación y el aprendizaje significativo.
-</p>
+  <h2>🎯 Clases Transformadoras</h2>
+  <p>
+    En conjunto, estas metodologías aseguran que las clases sean <b>efectivas, dinámicas y transformadoras</b>, enfocadas en la acción, la comunicación y el aprendizaje significativo.
+  </p>
 
 
 
-<button class="closeGuarantee" onclick="closeGuarantee()">¡Entendido!</button>`;
+  <button class="closeGuarantee" onclick="closeGuarantee()">¡Entendido!</button>`;
 
   GuaranteeExplbefore.appendChild(GuaranteeExpl);
 }
@@ -608,9 +930,9 @@ function OpenTopics(syllabus, level) {
   filterwarning.className = "filterwarning";
   if (filtroLevels.includes(numLevel)) {
     filterwarning.innerHTML = `
-      <h3>🚨 Este es un nivel filtro</h3>
-      <button onclick="FilterWarning()">¿Qué es un nivel filtro?</button>
-    `;
+        <h3>🚨 Este es un nivel filtro</h3>
+        <button onclick="FilterWarning()">¿Qué es un nivel filtro?</button>
+      `;
   }
   titlediv.appendChild(filterwarning);
 
@@ -628,7 +950,7 @@ function OpenTopics(syllabus, level) {
   durationDiv.className = "CEFRBox";
   const config = syllabusConfig[syllabus];
   let duracion =
-      numLevel === 0 ? config.level0DurationWeeks : config.levelDurationWeeks;
+    numLevel === 0 ? config.level0DurationWeeks : config.levelDurationWeeks;
   durationDiv.innerHTML = `<h3 class="CEFRDur">Duración: <strong>${duracion || "-"} semanas</strong></h3>`;
   container.appendChild(durationDiv);
   // --------------------------
@@ -637,8 +959,7 @@ function OpenTopics(syllabus, level) {
   const levels = Object.keys(topicsData[syllabus]).map((l) => parseInt(l, 10));
   const lastLevel = levels.length ? Math.max(...levels) : 0;
 
-
-console.log(levels, lastLevel)
+  console.log(levels, lastLevel);
 
   if (numLevel === lastLevel) {
     // 1️⃣ Add CEFR final if exists
@@ -659,48 +980,48 @@ console.log(levels, lastLevel)
         //MASTERS FOR KIDS
         if (config.nextsyllabus.includes("Masters")) {
           nextBtnDiv.innerHTML += `
-        <h3>También estará listo/a para nuestro curso Masters.</h3>
-            <button onclick="loadSyllabus('${config.nextsyllabus}')">
-              🚀  Ver lo que aprenderá en ${syllabusTitle}
-            </button>
-          `;
+          <h3>También estará listo/a para nuestro curso Masters.</h3>
+              <button onclick="loadSyllabus('${config.nextsyllabus}')">
+                🚀  Ver lo que aprenderá en ${syllabusTitle}
+              </button>
+            `;
         }
         //KIDS FOR JUNIORS
         else {
           syllabusTitle = config.nextsyllabus.replace(/8-12/, "");
           nextBtnDiv.innerHTML += `
-        <h3>También estará listo/a para nuestro cursos de 8 a 12 años:</h3>
-        <div class="nextBtns2Options">
-            <button onclick="loadSyllabus('${config.nextsyllabus}')">
-               Kids (3h/semana)
-            </button>
-            <button onclick="loadSyllabus('Kids (Super Intensivo) 8-12')">
-               Kids (5h/semana)
-            </button>
-            </div>
-          `;
+          <h3>También estará listo/a para nuestro cursos de 8 a 12 años:</h3>
+          <div class="nextBtns2Options">
+              <button onclick="loadSyllabus('${config.nextsyllabus}')">
+                 Kids (3h/semana)
+              </button>
+              <button onclick="loadSyllabus('Kids (Super Intensivo) 8-12')">
+                 Kids (5h/semana)
+              </button>
+              </div>
+            `;
         }
       }
       //TEENS - ONLY MASTERS
       else if (config.nextsyllabus.includes("Teens")) {
         nextBtnDiv.innerHTML += `
-        <h3>También estará listo/a para nuestro curso Masters.</h3>
-            <button onclick="loadSyllabus('${config.nextsyllabus}')">
-              🚀  Ver lo que aprenderá en ${syllabusTitle}
-            </button>
-          `;
+          <h3>También estará listo/a para nuestro curso Masters.</h3>
+              <button onclick="loadSyllabus('${config.nextsyllabus}')">
+                🚀  Ver lo que aprenderá en ${syllabusTitle}
+              </button>
+            `;
       }
       //ADULTS - ONLY MASTERS - 2 OPTIONS
       else {
         nextBtnDiv.innerHTML += `  
-        <h3>También estarás listo/a para uno de nuestros cursos Masters.</h3>
-        <button onclick="loadSyllabus('${config.nextsyllabus}')">
-          🚀  Explora ${config.nextsyllabus}
-          </button>
-        <button onclick="loadSyllabus('Adults Masters (5hrs/week)')">
-          🚀  Explora Adults Masters (5hrs/week)
-          </button>
-          `;
+          <h3>También estarás listo/a para uno de nuestros cursos Masters.</h3>
+          <button onclick="loadSyllabus('${config.nextsyllabus}')">
+            🚀  Explora ${config.nextsyllabus}
+            </button>
+          <button onclick="loadSyllabus('Adults Masters (5hrs/week)')">
+            🚀  Explora Adults Masters (5hrs/week)
+            </button>
+            `;
       }
 
       durationDiv.appendChild(nextBtnDiv);
@@ -770,7 +1091,7 @@ console.log(levels, lastLevel)
 // ----------------------
 function closeTopics() {
   const container = document.getElementById("Topics");
-  if (!container) return; 
+  if (!container) return;
 
   const levelsGrid = document.getElementById("levels-grid");
   if (levelsGrid) {
@@ -815,19 +1136,19 @@ function FilterWarning() {
   const FilterExpl = document.createElement("div");
   FilterExpl.className = "FilterExpl";
   FilterExpl.innerHTML = `
-    <h1>¿Qué es un nivel Filtro?</h1>
-    <div class="Filtercontent">
-    <p>
-    Un <strong>nivel filtro</strong> es un punto de control que nos permite verificar que cada estudiante tenga las habilidades necesarias para avanzar al siguiente nivel de inglés. Evaluamos <strong>gramática, comprensión, pronunciacón, fluidez y entonación</strong>.
-  </p>
+      <h1>¿Qué es un nivel Filtro?</h1>
+      <div class="Filtercontent">
+      <p>
+      Un <strong>nivel filtro</strong> es un punto de control que nos permite verificar que cada estudiante tenga las habilidades necesarias para avanzar al siguiente nivel de inglés. Evaluamos <strong>gramática, comprensión, pronunciacón, fluidez y entonación</strong>.
+    </p>
 
-  <ul>
-    <li>Si el estudiante <strong>aprueba</strong>, continúa al siguiente nivel.</li>
-    <li>Si <strong>no aprueba</strong>, se <strong>reforzará y repasará</strong> el aprendizaje: en <strong>cursos intensivos</strong> retomará el nivel desde la mitad, y en <strong>los demás cursos</strong> desde el inicio, <strong>preparándose para intentarlo nuevamente con confianza</strong>. Esto asegura que avance de manera sólida y sin vacíos en su aprendizaje, en un ambiente de apoyo y motivación.</li>
-  </ul>
-    </div>
-    <button onclick="CloseFilterWarning()">¡Entendido!</button>
-    `;
+    <ul>
+      <li>Si el estudiante <strong>aprueba</strong>, continúa al siguiente nivel.</li>
+      <li>Si <strong>no aprueba</strong>, se <strong>reforzará y repasará</strong> el aprendizaje: en <strong>cursos intensivos</strong> retomará el nivel desde la mitad, y en <strong>los demás cursos</strong> desde el inicio, <strong>preparándose para intentarlo nuevamente con confianza</strong>. Esto asegura que avance de manera sólida y sin vacíos en su aprendizaje, en un ambiente de apoyo y motivación.</li>
+    </ul>
+      </div>
+      <button onclick="CloseFilterWarning()">¡Entendido!</button>
+      `;
   FilterExplbefore.appendChild(FilterExpl);
 }
 function CloseFilterWarning() {
