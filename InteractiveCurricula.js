@@ -1,6 +1,6 @@
 (() => {
   const version = "Students";
-  const versionnum = "0.0.9";
+  const versionnum = "0.1";
   const jsonVersion = 0.1;
   window.appVersion = version;
   document.getElementById("version").innerHTML =
@@ -108,22 +108,80 @@ fetch(`InteractiveCurricula.json?v=${Date.now()}`)
   .then((data) => {
     topicsData = data;
 
+     openSyllabusFromURL();
+
     const grid = document.getElementById("syllabusGrid");
     grid.innerHTML = "";
 
-    // Crear contenedores por categoría
-    const categories = ["Juniors", "Kids", "Teens", "Adults"];
-    const containers = {};
+    // topbar
+    const topbar = document.createElement("div");
+    topbar.className = "topbar";
+    topbar.innerHTML = `
+    <img src="https://raw.githubusercontent.com/TheMichia/database/refs/heads/main/logos/Logo_0002_juniorslogos.png">
+    <img src="https://raw.githubusercontent.com/TheMichia/database/refs/heads/main/logos/Logo_0000_english4kids-vector.png">
+    <img src="https://raw.githubusercontent.com/TheMichia/database/refs/heads/main/logos/Logo_0001_teenslogos.png">
+    <img src="https://raw.githubusercontent.com/TheMichia/database/refs/heads/main/logos/Logo%20Adults.png">
+    `;
+    grid.appendChild(topbar);
 
-    categories.forEach((cat) => {
-      const div = document.createElement("div");
-      div.className = "syllabus-category";
-      div.id = `category-${cat.toLowerCase()}`;
-      const h = document.createElement("h3");
-      h.textContent = cat;
-      div.appendChild(h);
-      grid.appendChild(div);
-      containers[cat] = div;
+    // Crear título
+    const titleHolder = document.createElement("div");
+    titleHolder.className = "titleHolder";
+    const title = document.createElement("h1");
+    title.textContent = "¡Bienvenido a nuestra Curricula Intractiva!";
+    titleHolder.appendChild(title);
+    const subtitle = document.createElement("h2");
+    subtitle.textContent = "Selecciona un curso";
+    titleHolder.appendChild(subtitle);
+    const subtitle2 = document.createElement("h3");
+    subtitle2.textContent = "Conoce más sobre cada una de nuestras opciones";
+    titleHolder.appendChild(subtitle2);
+    grid.appendChild(titleHolder);
+
+    const optionholder = document.createElement("div");
+    optionholder.className = "optionholder";
+    grid.appendChild(optionholder);
+
+    // Crear los botones (SIN categorías)
+    Object.keys(data).forEach((syllabus) => {
+      const btn = document.createElement("button");
+      btn.className = "syllabus-btn";
+      btn.type = "button";
+
+      let imgSrc = "";
+
+      if (syllabus.includes("Juniors")) {
+        imgSrc = "juniors";
+      } else if (syllabus.includes("Kids")) {
+        if (syllabus.includes("Kids Masters")) {
+          imgSrc = syllabus.includes("2") ? "kmasters2" : "kmasters";
+        } else {
+          imgSrc = "kids";
+        }
+      } else if (syllabus.includes("Teens")) {
+        if (syllabus.includes("Teens Masters")) {
+          imgSrc = syllabus.includes("2") ? "tmasters2" : "tmasters";
+        } else {
+          imgSrc = "teens";
+        }
+      } else if (syllabus.includes("Adults")) {
+        if (syllabus.includes("Adults Masters")) {
+          imgSrc = syllabus.includes("2") ? "amasters2" : "amasters";
+        } else {
+          imgSrc = "adults";
+        }
+      }
+
+      btn.innerHTML = `<img src="assets/mainPage/${imgSrc}.svg">`;
+
+      const h3 = document.createElement("h3");
+      h3.classList.add("syllabus-name");
+      h3.textContent = syllabus;
+      btn.appendChild(h3);
+
+      btn.addEventListener("click", () => loadSyllabus(syllabus));
+
+      optionholder.appendChild(btn);
     });
 
     // Crear los botones y asignarlos según categoría
@@ -151,7 +209,7 @@ fetch(`InteractiveCurricula.json?v=${Date.now()}`)
           const h = document.createElement("h3");
           h.textContent = "Others";
           div.appendChild(h);
-          grid.appendChild(div);
+          optionholder.appendChild(div);
           containers["Others"] = div;
         }
         containers["Others"].appendChild(btn);
@@ -354,7 +412,7 @@ function loadSideAllCursos() {
   <h2>De inicios a intermedios</h2>
   <button onclick="loadSyllabus('Juniors 5-7')">
   <img src="assets/icons/7.svg">
-  <h3>Juniors</h3> 
+  <h3>Juniors 5-7</h3> 
   <h4>3 clases/semana</h4>
   <div class="explore">Explorar</div>
   </button>
@@ -390,13 +448,13 @@ function loadSideAllCursos() {
   <div class="masters">
   <button onclick="loadSyllabus('Kids Masters')">
   <img src="assets/icons/8.svg">
-  <h3>Kids Masters</h3>
+  <h3>Kids Master's</h3>
   <h4>5 horas/semana</h4>
   <div class="explore">Explorar</div>
   </button>
   <button onclick="loadSyllabus('Kids Masters 2')">
   <img src="assets/icons/8.svg">
-  <h3>Kids Masters 2</h3>
+  <h3>Kids Master's 2</h3>
   <h4>5 horas/semana</h4>
   <div class="explore">Explorar</div>
   </button>
@@ -418,13 +476,13 @@ function loadSideAllCursos() {
   <div class="normal">
   <button onclick="loadSyllabus('Teens 13-17 (3 horas/semana)')">
   <img src="assets/icons/9.svg">
-  <h3>Teens  <i>(Intensivo)</i></h3>
+  <h3>Teens <i>(3hrs/week)</i></h3>
   <h4>3 horas/semana</h4>
   <div class="explore">Explorar</div>
   </button>
   <button onclick="loadSyllabus('Teens 13-17 (5 horas/semana)')">
   <img src="assets/icons/9.svg">
-  <h3>Teens  <i>(Super Intensivo)</i></h3>
+  <h3>Teens <i>(5hrs/week) </i></h3>
   <h4>5 horas/semana</h4>
   <div class="explore">Explorar</div>
   </button>
@@ -433,13 +491,13 @@ function loadSideAllCursos() {
   <div class="masters">
   <button onclick="loadSyllabus('Teens Masters')">
   <img src="assets/icons/9.svg">
-  <h3>Teens Masters</h3>
+  <h3>Teens Master's</h3>
   <h4>5 horas/semana</h4>
   <div class="explore">Explorar</div>
   </button>
   <button onclick="loadSyllabus('Teens Masters 2')">
   <img src="assets/icons/9.svg">
-  <h3>Teens Masters 2</h3>
+  <h3>Teens Master's 2</h3>
   <h4>5 horas/semana</h4>
   <div class="explore">Explorar</div>
   </button>
@@ -461,13 +519,13 @@ function loadSideAllCursos() {
   <div class="normal">
   <button onclick="loadSyllabus('Adults (3hrs/week)')">
   <img src="assets/icons/10.svg">
-  <h3>Adults <i>(Intensivo)</i></h3>
+  <h3>Adults <i>(3hrs/week)</i></h3>
   <h4>3 horas/semana</h4>
   <div class="explore">Explorar</div>
   </button>
   <button onclick="loadSyllabus('Adults (5hrs/week)')">
   <img src="assets/icons/10.svg">
-  <h3>Adults <i>(Super Intensivo)</i></h3>
+  <h3>Adults <i>(5hrs/week)</i></h3>
   <h4>5 horas/semana</h4>
   <div class="explore">Explorar</div>
   </button>
@@ -476,13 +534,13 @@ function loadSideAllCursos() {
   <div class="masters">
   <button onclick="loadSyllabus('Adults Masters (3hrs/week)')">
   <img src="assets/icons/10.svg">
-  <h3>Adults Masters<i>(Intensivo)</i></h3>
+  <h3>Adults Master's<i>(3hrs/week)</i></h3>
   <h4>3 horas/semana</h4>
   <div class="explore">Explorar</div>
   </button>
   <button onclick="loadSyllabus('Adults Masters (5hrs/week)')">
   <img src="assets/icons/10.svg">
-  <h3>Adults Masters<i>(Super Intensivo)</i></h3>
+  <h3>Adults Master's<i>(5hrs/week)</i></h3>
   <h4>5 horas/semana</h4>
   <div class="explore">Explorar</div>
   </button>
@@ -612,15 +670,14 @@ function initCarousel() {
 // ==============================================
 
 function loadSyllabus(name, push = true) {
-
   const infooverlay = document.createElement("div");
   const body = document.body;
-      infooverlay.className = "Info-overlay";
-      infooverlay.id = "Info-overlay";
-      infooverlay.innerHTML = `<p>Esta currícula es interactiva,<br />haz click en los niveles para ver los temas a aprender.</p>`
-      infooverlay.onclick = () => infooverlay.remove();
+  infooverlay.className = "Info-overlay";
+  infooverlay.id = "Info-overlay";
+  infooverlay.innerHTML = `<p>Esta currícula es interactiva,<br />haz click en los niveles para ver los temas a aprender.</p>`;
+  infooverlay.onclick = () => infooverlay.remove();
   body.appendChild(infooverlay);
- 
+
   // contains all syllabus options
   const grid = document.getElementById("syllabusGrid");
   const container = document.getElementById("MainContainer");
@@ -683,8 +740,16 @@ function loadSyllabus(name, push = true) {
   subtitle.textContent = `Este curso tiene una duración de ${duracionCurso} meses. Haz click en cada nivel para conocer más.`;
   titlediv.appendChild(subtitle);
   const logo = document.createElement("img");
-  logo.src =
-    "https://raw.githubusercontent.com/TheMichia/database/refs/heads/main/logos/Logo_0000_english4kids-vector.png";
+  logo.src = name.includes("Juniors")
+  ? "https://raw.githubusercontent.com/TheMichia/database/refs/heads/main/logos/Logo_0002_juniorslogos.png" 
+  : name.includes("Kids")
+    ? "https://raw.githubusercontent.com/TheMichia/database/refs/heads/main/logos/Logo_0000_english4kids-vector.png"
+    : name.includes("Teens")
+      ? "https://raw.githubusercontent.com/TheMichia/database/refs/heads/main/logos/Logo_0001_teenslogos.png" 
+      : name.includes("Adults")
+        ? "https://raw.githubusercontent.com/TheMichia/database/refs/heads/main/logos/Logo%20Adults.png" 
+        : "https://raw.githubusercontent.com/TheMichia/database/refs/heads/main/logos/Logo_0000_english4kids-vector.png"; // default
+
   header.appendChild(logo);
   //----------------//
 
@@ -732,21 +797,30 @@ function loadSyllabus(name, push = true) {
     `;
   container.appendChild(guaranteeDiv);
 
-// SIDE BUTTON
-if (sidecursosopened) {
-  closeSideAllCursos();
-  sidecursosopened = false;
-} else {
-  const body = document.body;
-  const sideAllCursos = document.createElement("div");
-  sideAllCursos.className = "hoveringSideAllCursos";
-  sideAllCursos.id = "hoveringSideAllCursos";
-  sideAllCursos.innerHTML = `<button onclick="loadSideAllCursos()"><b>☰</b> Ver todos nuestros cursos</button>`;
-  body.appendChild(sideAllCursos);
+  // SIDE BUTTON
+  if (sidecursosopened) {
+    closeSideAllCursos();
+    sidecursosopened = false;
+  } else {
+    const body = document.body;
+    const sideAllCursos = document.createElement("div");
+    sideAllCursos.className = "hoveringSideAllCursos";
+    sideAllCursos.id = "hoveringSideAllCursos";
+    sideAllCursos.innerHTML = `<button onclick="loadSideAllCursos()"><b>☰</b> Ver todos nuestros cursos</button>`;
+    body.appendChild(sideAllCursos);
+  }
+
+  topicsopened = false;
 }
 
-topicsopened = false;
+function openSyllabusFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("syllabus");
+  if (!name) return;
+
+  loadSyllabus(decodeURIComponent(name).replace(/\+/g, " "), false);
 }
+
 
 const mobileQuery = window.matchMedia("(max-width: 768px)");
 
@@ -1029,52 +1103,111 @@ function OpenTopics(syllabus, level) {
     }
   }
 
-  // --------------------------
-  // Subtítulo
-  // --------------------------
-  const H3 = document.createElement("h3");
-  H3.className = "LevelSubtitle";
-  H3.textContent = `En este nivel aprenderá a:`;
-  container.appendChild(H3);
 
   // --------------------------
   // Topics table
   // --------------------------
   const topicsSpace = document.createElement("div");
   topicsSpace.className = "topicsSpace";
-  const table = document.createElement("table");
-  const tbody = document.createElement("tbody");
 
-  topics.forEach((t) => {
+  // --------------------------
+  // Subtítulo
+  // --------------------------
+  const H3 = document.createElement("h3");
+  H3.className = "LevelSubtitle";
+  H3.textContent = `En este nivel aprenderá a:`;
+      container.appendChild(H3);
+
+  
+  // --------------------------
+  // Prepare previousLevelTopics
+  // --------------------------
+  const currentLevel = parseInt(level);
+  let previousLevelTopics = [];
+
+  // Collect all topics from levels < current level
+  for (let l = 0; l < currentLevel; l++) {
+    const lvlTopics = topicsData[syllabus][l] || [];
+    previousLevelTopics = previousLevelTopics.concat(lvlTopics);
+  }
+
+  // Convert to lowercase for consistent comparison
+  previousLevelTopics = previousLevelTopics.map(t => t.toLowerCase());
+
+  // --------------------------
+  // Split topics into new vs old
+  // --------------------------
+  const newTopics = [];
+  const oldTopics = [];
+  (topics || []).forEach(t => {
+    if (t && !previousLevelTopics.includes(t.toLowerCase())) {
+      newTopics.push(t);
+    } else {
+      oldTopics.push(t);
+    }
+  });
+
+  // Merge new topics first
+  const sortedTopics = [...oldTopics, ...newTopics];
+
+  // --------------------------
+  // Render topics
+  // --------------------------
+  const table = document.createElement("div");
+  table.className = "TopicList";
+
+  sortedTopics.forEach((t) => {
+    const Tdiv = document.createElement("div");
+    Tdiv.className = "Tdiv";
+
     const simpleText = simpleBreakdownLower[t.toLowerCase()] || t;
     const desc = topicsBreakdown[t.toLowerCase()] || "-";
 
-    const trTopic = document.createElement("tr");
-    trTopic.innerHTML = `<td class="TopicName">● ${simpleText}</td>`;
+    // topicRow
+    const topicRow = document.createElement("div");
+    topicRow.className = "topicRow";
+    const trTopic = document.createElement("h1");
+    trTopic.classList.add("TopicName");
 
-    const trDesc = document.createElement("tr");
+    // NEW tag logic
+    if (t && !previousLevelTopics.includes(t.toLowerCase())) {
+      const newTag = document.createElement("span");
+      newTag.className = "new-tag";
+      newTag.textContent = "✦ NUEVO ✦";
+          topicRow.appendChild(newTag);
+    }
+    
+    // toggle button
+    const toggleBtn = document.createElement("span");
+    toggleBtn.className = "toggle-desc";
+    toggleBtn.innerHTML = `▶`;
+      topicRow.appendChild(toggleBtn);    
+
+    // topic name
+    trTopic.innerHTML += `${simpleText}`;
+    topicRow.appendChild(trTopic);
+
+    
+    // description
+    const trDesc = document.createElement("div");
     trDesc.classList.add("description-row");
-    trDesc.innerHTML = `<td class="TopicsDescription compressed">${desc}</td>`;
-
-    const toggleBtn = document.createElement("tr");
-    toggleBtn.innerHTML = `<td><span class="toggle-desc">▼ Conocer más</span></td>`;
-    const toggle = toggleBtn.querySelector(".toggle-desc");
+    trDesc.innerHTML = `<p class="TopicsDescription compressed">${desc}</p>`;
     const descCell = trDesc.querySelector(".TopicsDescription");
-
-    toggle.onclick = () => {
+      Tdiv.onclick = () => {
       const isOpen = descCell.classList.toggle("expanded");
       descCell.classList.toggle("compressed", !isOpen);
-      toggle.textContent = isOpen ? "▲ Contraer" : "▼ Conocer más";
+      toggleBtn.textContent = isOpen ? "▼" : "▶";
     };
 
-    tbody.appendChild(trTopic);
-    tbody.appendChild(trDesc);
-    tbody.appendChild(toggleBtn);
+    Tdiv.appendChild(topicRow);
+    Tdiv.appendChild(trDesc);
+    table.appendChild(Tdiv);
   });
 
-  table.appendChild(tbody);
+  // Append the table
   topicsSpace.appendChild(table);
   container.appendChild(topicsSpace);
+
 
   // Botón cerrar
   const closeBtn = document.createElement("button");
@@ -1177,6 +1310,12 @@ document.addEventListener("click", (e) => {
 
 // ==============================================
 window.addEventListener("popstate", () => {
+  if (!topicsData || Object.keys(topicsData).length === 0) {
+    // espera un momento y reintenta
+    setTimeout(() => window.dispatchEvent(new PopStateEvent("popstate")), 50);
+    return;
+  }
+
   const params = new URLSearchParams(location.search);
   const syllabusParam = params.get("syllabus");
 
@@ -1194,6 +1333,7 @@ window.addEventListener("popstate", () => {
 
   showSyllabusGrid();
 });
+
 
 //////////////////////////////////////////////////
 
@@ -1218,3 +1358,27 @@ window.addEventListener("load", () => {
     exportRoot.gotoAndPlay("out");
   });
 });
+
+// ==================MAINPAGE CAROUSEL============================
+
+const slider = document.querySelector(".optionholder");
+
+// ------------------
+// USER INTERACTION (wheel)
+// ------------------
+document.addEventListener(
+  "wheel",
+  (e) => {
+    const activeSlider = e.target.closest(".optionholder");
+    if (!activeSlider) return;
+    if (activeSlider.scrollWidth <= activeSlider.clientWidth) return;
+
+    e.preventDefault();
+
+    const speed = 5; // ajusta velocidad al gustofoption
+    activeSlider.scrollLeft += e.deltaY * speed;
+  },
+  { passive: false, capture: true },
+);
+
+// ------------------
